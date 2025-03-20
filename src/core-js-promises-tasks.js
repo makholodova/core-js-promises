@@ -38,14 +38,13 @@ function getPromise(number) {
  */
 function getPromiseResult(source) {
   return new Promise((resolve) => {
-    source.then(
-      () => {
+    source
+      .then(() => {
         resolve('success');
-      },
-      () => {
+      })
+      .catch(() => {
         resolve('fail');
-      }
-    );
+      });
   });
 }
 
